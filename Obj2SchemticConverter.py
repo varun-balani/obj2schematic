@@ -206,11 +206,11 @@ class Obj2SchematicConverter(object):
         self._save_schematic(out_path, schem)
 
     def _packing(self, schematic_obj):
-        schematic_obj.root['Blocks'] = tag.ByteArray(self.blocks)
-        schematic_obj.root['Data'] = tag.ByteArray(self.data)
-        schematic_obj.root['Width'] = tag.Short(self.width)
-        schematic_obj.root['Length'] = tag.Short(self.length)
-        schematic_obj.root['Height'] = tag.Short(self.height)
+        schematic_obj['Blocks'] = tag.ByteArray(self.blocks)
+        schematic_obj['Data'] = tag.ByteArray(self.data)
+        schematic_obj['Width'] = tag.Short(self.width)
+        schematic_obj['Length'] = tag.Short(self.length)
+        schematic_obj['Height'] = tag.Short(self.height)
 
     def _save_schematic(self, out_file, schematic_obj):
         schematic_obj.save(out_file)
